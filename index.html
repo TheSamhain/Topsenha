@@ -41,20 +41,25 @@
 
       ret += keyMod + num + "$";
 
-      document.getElementById("output").innerHTML = ret;
+      document.getElementById("output").value = ret;
       document.getElementById("qtde").innerHTML = ret.length + " caracteres";
     }
 
     function showPassword() {
-      var x = document.getElementById("texto");
-      if (x.type === "password") {
-        x.type = "text";
+      var inputPass = document.getElementById("texto");
+      if (inputPass.type === "password") {
+        inputPass.type = "text";
       } else {
-        x.type = "password";
+        inputPass.type = "password";
       }
     }
 
-
+    function copy() {
+      var text = document.getElementById("output");
+      text.select();
+      text.setSelectionRange(0, 99999); /*For mobile devices*/
+      document.execCommand("copy");
+    }
   </script>
 
   <style>
@@ -90,6 +95,25 @@
       flex-direction: row;
       justify-content: center;
     }
+
+    #divOutput {
+      height: 25px;
+      background-color: #e6e6e6;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    #output {
+      font-size: 14px;
+      background-color: rgba(255, 255, 255, 0);
+      border: 0;
+      border-right: 1px solid black;
+    }
+
+    #copy {
+      width: 100%;
+    }
   </style>
 </head>
 
@@ -99,10 +123,13 @@
     <div id="form">
       <label>Chave: <input type="text" name="chave" id="chave" /></label>
       <label>Texto: <input type="password" name="texto" id="texto" oninput="cripto()" /></label>
-      <label id="showPass"><input type="checkbox" onclick="showPassword()">Mostrar senha</label>
+      <label id="showPass"><input type="checkbox" onclick="showPassword()">Mostrar texto</label>
+      <div id="divOutput">
+        <input id="output" readonly value="" />
+        <img src="/assets/content_paste-black-18dp.svg" id="copy" onclick="copy()" />
+      </div>
+      <h2 id="qtde"></h2>
     </div>
-    <h2 id="output">...</h2>
-    <h2 id="qtde"></h2>
   </div>
 </body>
 
