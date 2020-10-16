@@ -18,7 +18,7 @@
       var ret = "@";
       var sum = 0;
 
-      for(const index of key){
+      for (const index of key) {
         keyMod = index + keyMod;
       }
 
@@ -44,6 +44,17 @@
       document.getElementById("output").innerHTML = ret;
       document.getElementById("qtde").innerHTML = ret.length + " caracteres";
     }
+
+    function showPassword() {
+      var x = document.getElementById("texto");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+
+
   </script>
 
   <style>
@@ -72,11 +83,12 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      width: 200px;
     }
 
-    input {
-      width: 140px;
+    #showPass {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
     }
   </style>
 </head>
@@ -86,7 +98,8 @@
     <h1>Criptografar</h1>
     <div id="form">
       <label>Chave: <input type="text" name="chave" id="chave" /></label>
-      <label>Texto: <input type="text" name="texto" id="texto" oninput="cripto()" /></label>
+      <label>Texto: <input type="password" name="texto" id="texto" oninput="cripto()" /></label>
+      <label id="showPass"><input type="checkbox" onclick="showPassword()">Mostrar senha</label>
     </div>
     <h2 id="output">...</h2>
     <h2 id="qtde"></h2>
