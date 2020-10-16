@@ -42,6 +42,7 @@
       ret += keyMod + num + "$";
 
       document.getElementById("output").innerHTML = ret;
+      document.getElementById("qtde").innerHTML = ret.length + " caracteres";
     }
   </script>
 
@@ -88,6 +89,7 @@
       <label>Texto: <input type="text" name="texto" id="texto" oninput="cripto()" /></label>
     </div>
     <h2 id="output">...</h2>
+    <h2 id="qtde"></h2>
   </div>
 </body>
 
