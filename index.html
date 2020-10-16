@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    function isLetter(str) {
+      return str.length === 1 && str.match(/[a-zA-Z]/i);
+    }
+
+    function cripto() {
+      var key = document.getElementById("chave").value;
+      var text = document.getElementById("texto").value;
+
+      var num = "";
+      var word = "";
+      var ret = "@";
+      var sum = 0;
+
+      for (const index of text) {
+        if (isLetter(index)) {
+          word += index;
+        } else {
+          num += index;
+        }
+      }
+
+      for (var i = 0; i < word.length; i++) {
+        sum += (word.toLowerCase().charCodeAt(i) - 97);
+      }
+
+      for (const index of sum.toString()) {
+        ret += String.fromCharCode(parseInt(index) + 97);
+        ret += index;
+      }
+
+      ret += key + num + "$";
+
+      document.getElementById("output").innerHTML = ret;
+    }
+  </script>
+
+  <style>
+    #root {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+
+    #form {
+      margin: 25px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin: 5px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <h1>Criptografar</h1>
+    <div id="form">
+      <label>Chave: <input type="text" name="chave" id="chave" /></label>
+      <label>Texto: <input type="text" name="texto" id="texto" oninput="cripto()" /></label>
+    </div>
+    <h2 id="output">Criptografado</h2>
+  </div>
+</body>
+
+</html>
