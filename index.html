@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <head>
   <script>
     function isLetter(str) {
@@ -8,13 +9,18 @@
     }
 
     function cripto() {
-      var key = document.getElementById("chave").value;
+      var key = document.getElementById("chave").value.toUpperCase();
       var text = document.getElementById("texto").value;
 
+      var keyMod = "";
       var num = "";
       var word = "";
       var ret = "@";
       var sum = 0;
+
+      for(const index of key){
+        keyMod = index + keyMod;
+      }
 
       for (const index of text) {
         if (isLetter(index)) {
@@ -33,7 +39,7 @@
         ret += index;
       }
 
-      ret += key + num + "$";
+      ret += keyMod + num + "$";
 
       document.getElementById("output").innerHTML = ret;
     }
