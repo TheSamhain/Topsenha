@@ -98,10 +98,13 @@
 
     #divOutput {
       height: 25px;
-      background-color: #e6e6e6;
+      background-color: #fafbfc;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      border: 1px solid #d9dadc;
+      border-radius: 5px;
+      padding: 2px;
     }
 
     #output {
@@ -113,6 +116,7 @@
 
     #copy {
       width: 100%;
+      margin: 3px;
     }
   </style>
 </head>
@@ -126,7 +130,7 @@
       <label id="showPass"><input type="checkbox" onclick="showPassword()">Mostrar texto</label>
       <div id="divOutput">
         <input id="output" readonly value="" />
-        <img src="/assets/content_paste-black-18dp.svg" id="copy" onclick="copy()" />
+        <img src="assets/copy.svg" id="copy" onclick="copy()" />
       </div>
       <h2 id="qtde"></h2>
     </div>
