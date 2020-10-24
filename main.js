@@ -6,6 +6,8 @@ function cripto() {
     var key = document.getElementById("chave").value.toUpperCase();
     var text = document.getElementById("texto").value;
 
+    text = text.replace(/\s/g, '');
+
     var keyMod = "";
     var num = "";
     var word = "";
