@@ -16,6 +16,7 @@
     margin: 25px;
     display: flex;
     flex-direction: column;
+
 }
 
 label {
@@ -23,6 +24,7 @@ label {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 #showPass {
