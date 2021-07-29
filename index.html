@@ -1,25 +1,46 @@
 <!DOCTYPE html>
-<html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="favicon.png" />
+    <title>Gerador de Senhas</title>
+
     <script src="main.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
     <div id="root">
-        <h1>Insira sua chave e padrão</h1>
-        <div id="form">
-            <label>Chave: <input type="text" name="chave" id="chave" /></label>
-            <label>Texto: <input type="password" name="texto" id="texto" oninput="cripto()" /></label>
-            <label id="showPass"><input type="checkbox" onclick="showPassword()">Mostrar texto</label>
+        <h1 class="titulo">Insira sua chave e padrão</h1>
+        <form id="form">
+            <label>
+                Chave:
+                <input type="password" name="chave" id="chave" oninput="cripto()"/>
+            </label>
+
+            <label>
+                Texto:
+                <input type="password" name="texto" id="texto" oninput="cripto()" />
+            </label>
+
+            <label id="showPass">
+                <input type="checkbox" onclick="showPassword()">
+                Mostrar texto
+            </label>
+
             <div id="divOutput">
                 <input id="output" readonly value="" />
                 <img src="assets/copy.svg" id="copy" onclick="copy()" />
             </div>
-        </div>
+        </form>
         <h2 id="qtde">0 caracteres</h2>
+
     </div>
 </body>
 

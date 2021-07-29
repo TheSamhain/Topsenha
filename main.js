@@ -3,16 +3,26 @@ function isLetter(str) {
 }
 
 function cripto() {
-    var key = document.getElementById("chave").value.toUpperCase();
-    var text = document.getElementById("texto").value;
+    const
+        inputKey = document.getElementById('chave'),
+        inputText = document.getElementById('texto'),
+        labelOutput = document.getElementById('output'),
+        labelQtde = document.getElementById('qtde');
 
-    text = text.replace(/\s/g, '');
+    let key = inputKey.value.toUpperCase(),
+        text = inputText.value.replace(/\s/g, ''),
+        keyMod = '',
+        num = '',
+        word = '',
+        ret = '@',
+        sum = 0;
 
-    var keyMod = "";
-    var num = "";
-    var word = "";
-    var ret = "@";
-    var sum = 0;
+    if (!key || !text) {
+        labelOutput.value = '';
+        labelQtde.innerHTML = '0 caracteres';
+
+        return;
+    }
 
     for (const index of key) {
         keyMod = index + keyMod;
@@ -35,24 +45,28 @@ function cripto() {
         ret += index;
     }
 
-    ret += keyMod + num + "$";
+    ret += keyMod + num + '$';
 
-    document.getElementById("output").value = ret;
-    document.getElementById("qtde").innerHTML = ret.length + " caracteres";
+    labelOutput.value = ret;
+    labelQtde.innerHTML = `${ret.length}  caracteres`;
 }
 
 function showPassword() {
-    var inputPass = document.getElementById("texto");
-    if (inputPass.type === "password") {
-        inputPass.type = "text";
-    } else {
-        inputPass.type = "password";
-    }
+    var inputs = document.getElementsByTagName('input');
+
+    for (let input of inputs) {
+        if (input.type === 'password') {
+            input.type = 'text';
+        }
+        else if (input.type === 'text') {
+            input.type = 'password';
+        }
+    };
 }
 
 function copy() {
-    var text = document.getElementById("output");
+    var text = document.getElementById('output');
     text.select();
     text.setSelectionRange(0, 99999); /*For mobile devices*/
-    document.execCommand("copy");
+    document.execCommand('copy');
 }
