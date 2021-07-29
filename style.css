@@ -35,7 +35,6 @@ footer {
     margin: 25px;
     display: flex;
     flex-direction: column;
-
 }
 
 label {
@@ -44,6 +43,11 @@ label {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+i {
+    margin: 15px;
+    font-size: x-large;
 }
 
 label > input {
