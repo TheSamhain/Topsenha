@@ -90,3 +90,18 @@ label > input {
     font-size: 2em;
     font-weight: bold;
 }
+
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+    }
+
+    footer > * {
+        margin: 5px 0px;
+        order: 3;
+    }
+
+    footer > div {
+        order: 1;
+    }
+}
