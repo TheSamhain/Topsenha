@@ -70,3 +70,40 @@ function copy() {
     text.setSelectionRange(0, 99999); /*For mobile devices*/
     document.execCommand('copy');
 }
+
+/**
+ * Define o tema do app
+ * @param {String} tema `dark` | `light` 
+ */
+const setTema = (tema = 'dark') => {
+    const
+        style = document.documentElement.style,
+        linkedinDiv = document.getElementsByClassName('LI-profile-badge')[0];
+
+    if (tema == 'dark') {
+        style.setProperty('--CorPrincipal', '#2f2f2f');
+        style.setProperty('--CorTexto', '#fff');
+        localStorage.setItem('tema', 'dark');
+    } else {
+        style.setProperty('--CorPrincipal', '#fff');
+        style.setProperty('--CorTexto', '#000');
+        localStorage.setItem('tema', 'light');
+    }
+}
+
+let tema = localStorage.getItem('tema');
+
+if (!tema) {
+    (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) // Pega o tema do sistema
+        ? setTema('dark')
+        : setTema('light');
+} else {
+    setTema(tema);
+}
+
+// Identifica mudança de tema do sistema
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    e.matches
+        ? setTema('dark')
+        : setTema('light');
+});
