@@ -30,11 +30,14 @@
 
     <!-- /// Meta tags para compartilhamento /// -->
     <meta prefix="og: http://ogp.me/ns#" property="og:title" content="Gerador de Senhas" />
-    <meta prefix="og: http://ogp.me/ns#" property="og:description" content="Este aplicativo tem como intuito a criação de senhas com a utilização de um padrão." />
+    <meta prefix="og: http://ogp.me/ns#" property="og:description"
+        content="Este aplicativo tem como intuito a criação de senhas com a utilização de um padrão." />
     <meta prefix="og: http://ogp.me/ns#" property="og:url" content="https://thesamhain.github.io/GeradorDeSenhas/" />
-    <meta prefix="og: http://ogp.me/ns#" property="og:image" content="https://thesamhain.github.io/GeradorDeSenhas/assets/favicon.png" />
+    <meta prefix="og: http://ogp.me/ns#" property="og:image"
+        content="https://thesamhain.github.io/GeradorDeSenhas/assets/favicon.png" />
 
-    <script src="main.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/clipboard.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -52,7 +55,7 @@
                 </label>
 
                 <label>
-                    Texto:
+                    Padrão:
                     <input type="password" name="texto" id="texto" oninput="cripto()" />
                 </label>
 
@@ -61,9 +64,9 @@
                     Mostrar texto
                 </label>
 
-                <div id="divOutput">
+                <div id="divOutput" class="btnCopy" data-clipboard-target="#output">
                     <input id="output" readonly value="" />
-                    <img src="assets/copy.svg" id="copy" onclick="copy()" />
+                    <img src="assets/copy.svg" id="copy" />
                 </div>
             </form>
             <h2 id="qtde">0 caracteres</h2>

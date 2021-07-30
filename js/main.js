@@ -68,14 +68,6 @@ function showPassword() {
     };
 }
 
-function copy() {
-    var text = document.getElementById('output');
-    text.focus();
-    text.select();
-    text.setSelectionRange(0, 99999); /*For mobile devices*/
-    document.execCommand('copy');
-}
-
 /**
  * Define o tema do app
  * @param {String} tema `dark` | `light` 
@@ -100,6 +92,8 @@ const setTema = (tema = 'dark') => {
 }
 
 const initial = () => {
+    new ClipboardJS('.btnCopy');
+
     let tema = localStorage.getItem('tema');
 
     if (!tema) {
