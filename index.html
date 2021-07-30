@@ -37,7 +37,8 @@
     <!-- Meta tags essentials  -->
     <title>Gerador de Senhas - TOPSENHA</title>
     <meta name="description" content="Aplicativo para gerar senhas utilizando uma chave e um padrão" />
-    <meta name="keywords" content="gerador de senhas, senha, password, password generator, senha segura, safe password, padrão, TOPSENHA">
+    <meta name="keywords"
+        content="gerador de senhas, senha, password, password generator, senha segura, safe password, padrão, TOPSENHA">
     <meta name="author" content="Leonardo Noro Pereira">
 
     <!-- JavaScript -->
@@ -57,7 +58,7 @@
             <form id="form">
                 <label>
                     Chave:
-                    <input type="password" name="chave" id="chave" oninput="cripto()" />
+                    <input type="password" name="chave" id="chave" oninput="cripto(); setKey(this.value)" />
                 </label>
 
                 <label>

@@ -1,6 +1,4 @@
-function isLetter(str) {
-    return str.length === 1 && str.match(/[a-zA-Z]/i);
-}
+const isLetter = (str) => str.length === 1 && str.match(/[a-zA-Z]/i)
 
 function cripto() {
     const
@@ -68,56 +66,62 @@ function showPassword() {
     };
 }
 
+const setKey = (key) => localStorage.setItem('key', btoa(key));
+
 /**
  * Define o tema do app
- * @param {String} tema `dark` | `light` 
+ * @param {String} theme `dark` | `light` 
  */
-const setTema = (tema = 'dark') => {
+const setTheme = (theme = 'dark') => {
     const
         style = document.documentElement.style,
         linkedinDiv = document.getElementsByClassName('LI-profile-badge')[0],
         icon = document.getElementsByClassName('change-theme')[0];
 
-    if (tema == 'dark') {
+    if (theme == 'dark') {
         icon.className = icon.className.replace('-moon-', '-sun-');
         style.setProperty('--CorPrincipal', '#2f2f2f');
         style.setProperty('--CorTexto', '#fff');
-        localStorage.setItem('tema', 'dark');
+        localStorage.setItem('theme', 'dark');
     } else {
         icon.className = icon.className.replace('-sun-', '-moon-');
         style.setProperty('--CorPrincipal', '#fff');
         style.setProperty('--CorTexto', '#000');
-        localStorage.setItem('tema', 'light');
+        localStorage.setItem('theme', 'light');
     }
 }
 
 const initial = () => {
     new ClipboardJS('.btnCopy');
 
-    let tema = localStorage.getItem('tema');
+    let theme = localStorage.getItem('theme'),
+        inputKey = document.getElementById('chave'),
+        key = localStorage.getItem('key');
 
-    if (!tema) {
+    inputKey.value = atob(key);
+
+    if (!theme) {
         (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) // Pega o tema do sistema
-            ? setTema('dark')
-            : setTema('light');
+            ? setTheme('dark')
+            : setTheme('light');
     } else {
-        setTema(tema);
+        setTheme(theme);
     }
 }
 
 // Identifica mudança de tema do sistema
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
     e.matches
-        ? setTema('dark')
-        : setTema('light');
+        ? setTheme('dark')
+        : setTheme('light');
 });
 
 const changeTheme = () => {
-    let tema = localStorage.getItem('tema');
+    let theme = localStorage.getItem('theme');
 
-    if (tema == 'dark') {
-        setTema('light');
+    if (theme == 'dark') {
+        setTheme('light');
     } else {
-        setTema('dark');
+        setTheme('dark');
     }
 }
