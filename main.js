@@ -55,6 +55,10 @@ function showPassword() {
     var inputs = document.getElementsByTagName('input');
 
     for (let input of inputs) {
+        if (input.readOnly) {
+            continue;
+        }
+
         if (input.type === 'password') {
             input.type = 'text';
         }
@@ -66,6 +70,7 @@ function showPassword() {
 
 function copy() {
     var text = document.getElementById('output');
+    text.focus();
     text.select();
     text.setSelectionRange(0, 99999); /*For mobile devices*/
     document.execCommand('copy');
