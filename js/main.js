@@ -66,7 +66,7 @@ function showPassword() {
     };
 }
 
-const setKey = (key) => localStorage.setItem('key', btoa(key));
+const setKey = (key) => (!!key) && localStorage.setItem('key', btoa(key));
 
 /**
  * Define o tema do app
@@ -98,7 +98,9 @@ const initial = () => {
         inputKey = document.getElementById('chave'),
         key = localStorage.getItem('key');
 
-    inputKey.value = atob(key);
+    if (!!key) {
+        inputKey.value = atob(key);
+    }
 
     if (!theme) {
         (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) // Pega o tema do sistema
