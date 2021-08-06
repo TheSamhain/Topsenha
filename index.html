@@ -24,20 +24,19 @@
     <meta name="msapplication-TileImage" content="./assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <!--/// FAVICON ///-->
-    
+
     <!-- /// Meta tags para compartilhamento /// -->
     <meta prefix="og: http://ogp.me/ns#" property="og:title" content="Gerador de Senhas" />
     <meta prefix="og: http://ogp.me/ns#" property="og:description"
-    content="Este aplicativo tem como intuito a criação de senhas com a utilização de um padrão." />
+        content="Este aplicativo tem como intuito a criação de senhas com a utilização de um padrão." />
     <meta prefix="og: http://ogp.me/ns#" property="og:url" content="https://topsenha.com.br/" />
-    <meta prefix="og: http://ogp.me/ns#" property="og:image"
-    content="https://topsenha.com.br/assets/favicon.png" />
-    
+    <meta prefix="og: http://ogp.me/ns#" property="og:image" content="https://topsenha.com.br/assets/favicon.png" />
+
     <!-- Meta tags essentials  -->
     <title>Gerador de Senhas - TOPSENHA</title>
     <meta name="description" content="Aplicativo para gerar senhas utilizando uma chave e um padrão." />
     <meta name="keywords"
-    content="gerador de senhas, senha, password, password generator, senha segura, safe password, padrão, TOPSENHA">
+        content="gerador de senhas, senha, password, password generator, senha segura, safe password, padrão, TOPSENHA">
     <meta name="author" content="Leonardo Noro Pereira">
     <link rel="manifest" href="./manifest.json">
 
@@ -53,12 +52,26 @@
 
 <body>
     <article id="root">
+        <header>
+            <ul>
+                <li>
+                    <i class="bi bi-circle-half" onclick="changeTheme()"></i>
+                    <span onclick="changeTheme()">Alterar Tema</span>
+                </li>
+                
+                <li>
+                    <i class="bi bi-key-fill" onclick="setKey()"></i>
+                    <span onclick="setKey()">Armazenar Chave</span>
+                </li>
+            </ul>
+        </header>
+
         <section id="main">
             <h1 class="titulo">Insira sua chave e padrão</h1>
             <form id="form">
                 <label>
                     Chave:
-                    <input type="password" name="chave" id="chave" oninput="cripto(); setKey(this.value)" />
+                    <input type="password" name="chave" id="chave" oninput="cripto();" />
                 </label>
 
                 <label>
@@ -78,7 +91,6 @@
             </form>
             <h2 id="qtde">0 caracteres</h2>
 
-            <i class="bi bi-moon-fill change-theme" onclick="changeTheme()"></i>
         </section>
 
         <footer>

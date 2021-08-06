@@ -9,7 +9,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     width: 100%;
-    height: 100%;    
+    height: 100%;
     flex-direction: column;
     display: flex;
     overflow: hidden;
@@ -43,11 +43,6 @@ label {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-}
-
-i {
-    margin: 15px;
-    font-size: x-large;
 }
 
 label > input {
@@ -89,6 +84,32 @@ label > input {
     font-weight: initial;
     font-size: 2em;
     font-weight: bold;
+}
+
+/* Lista de botões no cabeçalho*/
+header > ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom: var(--CorTexto) 1px solid;
+}
+
+header > ul > li {
+    border-right: 1px solid var(--CorTexto);
+    padding: 10px;
+}
+
+header > ul > li:first-child {
+    border-left: 1px solid var(--CorTexto);
+}
+
+header > ul > li > * {
+    cursor: pointer;
+}
+
+header > ul > li > i {
+    font-size: x-large;
 }
 
 @media (max-width: 768px) {

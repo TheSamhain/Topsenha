@@ -66,7 +66,20 @@ function showPassword() {
     };
 }
 
-const setKey = (key) => (!!key) && localStorage.setItem('key', btoa(key));
+const setKey = () => {
+    let key = document.getElementById('chave').value,
+     msg = 'Chave armazenada!';
+     
+     if (!!key) {
+        msg = 'Chave criptografada e armazenada!';        
+        localStorage.setItem('key', btoa(key));
+    } else {
+        msg = 'Chave retirada do armazenamento!';
+        localStorage.setItem('key', '');
+    }
+
+    alert(msg)
+};
 
 /**
  * Define o tema do app
@@ -75,16 +88,13 @@ const setKey = (key) => (!!key) && localStorage.setItem('key', btoa(key));
 const setTheme = (theme = 'dark') => {
     const
         style = document.documentElement.style,
-        linkedinDiv = document.getElementsByClassName('LI-profile-badge')[0],
-        icon = document.getElementsByClassName('change-theme')[0];
+        linkedinDiv = document.getElementsByClassName('LI-profile-badge')[0];
 
     if (theme == 'dark') {
-        icon.className = icon.className.replace('-moon-', '-sun-');
         style.setProperty('--CorPrincipal', '#2f2f2f');
         style.setProperty('--CorTexto', '#fff');
         localStorage.setItem('theme', 'dark');
     } else {
-        icon.className = icon.className.replace('-sun-', '-moon-');
         style.setProperty('--CorPrincipal', '#fff');
         style.setProperty('--CorTexto', '#000');
         localStorage.setItem('theme', 'light');
