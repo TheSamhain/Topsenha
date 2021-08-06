@@ -1,5 +1,13 @@
 {
- "name": "Gerador de Senhas",
+ "name": "Gerador de Senhas - TOPSENHA",
+ "short_name": "TOPSENHA",
+ "description": "Aplicativo para gerar senhas utilizando uma chave e um padrão.",
+ "lang": "pt-BR",
+ "start_url": ".",
+ "display": "standalone",
+ "orientation": "portrait",
+ "background_color": "#fff",
+ "theme_color": "#fff",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
