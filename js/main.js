@@ -7,7 +7,7 @@ function cripto() {
         labelOutput = document.getElementById('output'),
         labelQtde = document.getElementById('qtde');
 
-    let key = inputKey.value.toUpperCase().replace(/\s/g, ''),
+    let key = inputKey.value.toUpperCase().replace(/\s/g, '').substr(0, 10),
         text = inputText.value.replace(/\s/g, ''),
         keyMod = '',
         num = '',
