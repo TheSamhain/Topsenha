@@ -15,10 +15,10 @@ function cripto() {
         ret = '@',
         sum = 0;
 
-    if (!key || !text) {
-        labelOutput.value = '';
-        labelQtde.innerHTML = '0 caracteres';
+    labelOutput.value = '';
 
+    if (!key || !text) {
+        labelQtde.innerHTML = '0 caracteres';
         return;
     }
 
@@ -30,7 +30,9 @@ function cripto() {
         if (isLetter(index)) {
             word += index;
         } else {
-            num += index;
+            if(num.length < 5){
+                num += index;
+            }
         }
     }
 
@@ -68,10 +70,10 @@ function showPassword() {
 
 const setKey = () => {
     let key = document.getElementById('chave').value,
-     msg = 'Chave armazenada!';
-     
-     if (!!key) {
-        msg = 'Chave criptografada e armazenada!';        
+        msg = 'Chave armazenada!';
+
+    if (!!key) {
+        msg = 'Chave criptografada e armazenada!';
         localStorage.setItem('key', btoa(key));
     } else {
         msg = 'Chave retirada do armazenamento!';
