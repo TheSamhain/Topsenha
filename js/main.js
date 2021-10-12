@@ -62,7 +62,6 @@ function cripto() {
 }
 
 function showPassword(show) {
-    console.log(show);
     const input = document.getElementById("chave");
 
     if (show) {
