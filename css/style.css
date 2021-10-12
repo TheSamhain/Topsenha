@@ -3,6 +3,7 @@ body {
     width: 100vw;
     background-color: var(--CorPrincipal);
     color: var(--CorTexto);
+    font-size: larger;
 }
 
 #root {
@@ -47,6 +48,15 @@ label {
 
 label > input {
     margin-left: 5px;
+    border: 1px solid #8f8f9d;
+    color: #000;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+}
+
+input:disabled {
+    border: 1px solid #d9dadc;
+
 }
 
 #showPass {
@@ -64,12 +74,13 @@ label > input {
     border: 1px solid #d9dadc;
     border-radius: 5px;
     padding: 2px;
+    cursor: copy;
 }
 
 #output {
     font-size: 14px;
     background-color: rgba(255, 255, 255, 0);
-    border: 0;
+    border: none;
     border-right: 1px solid black;
 }
 
