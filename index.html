@@ -76,12 +76,12 @@
 
                 <label>
                     <span>Padrão:</span>
-                    <input type="password" name="texto" id="texto" oninput="cripto()" />
+                    <input type="text" name="texto" id="texto" oninput="cripto()" />
                 </label>
 
                 <label id="showPass">
-                    <input type="checkbox" onclick="showPassword()">
-                    Mostrar texto
+                    <input type="checkbox" onclick="showPassword(this.checked)">
+                    <span>Mostrar Chave</span>
                 </label>
 
                 <div id="divOutput" class="btnCopy" data-clipboard-target="#output">
