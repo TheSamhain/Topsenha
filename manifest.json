@@ -456,6 +456,11 @@
     {
       "src": "assets/favicon/ios/1024.png",
       "sizes": "1024x1024"
+    },
+    {
+      "src": "assets/favicon/apple-icon.png",
+      "sizes": "192x192",
+      "purpose": "any"
     }
   ],
   "dir": "ltr",
