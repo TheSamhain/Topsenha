@@ -464,7 +464,7 @@
     }
   ],
   "dir": "ltr",
-  "display_override": [ "standalone" ],
+  "display_override": [ "minimal-ui" ],
   "scope": "https://topsenha.com.br/",
   "categories": [
     "security"
