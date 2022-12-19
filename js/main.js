@@ -97,7 +97,7 @@ const setTheme = (theme = "dark") => {
     let colorDefault = "#fff";
     
     if (theme == "dark") {
-        colorDefault = "2f2f2f";        
+        colorDefault = "#2f2f2f";        
         style.setProperty("--CorTexto", "#fff");                           
         localStorage.setItem("theme", "dark");
     } else {        
