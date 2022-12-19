@@ -1,117 +1,122 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--/// FAVICON ///-->
+		<link rel="apple-touch-icon" sizes="57x57" href="./assets/favicon/apple-icon-57x57.png" />
+		<link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon/apple-icon-60x60.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="./assets/favicon/apple-icon-72x72.png" />
+		<link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-icon-76x76.png" />
+		<link rel="apple-touch-icon" sizes="114x114" href="./assets/favicon/apple-icon-114x114.png" />
+		<link rel="apple-touch-icon" sizes="120x120" href="./assets/favicon/apple-icon-120x120.png" />
+		<link rel="apple-touch-icon" sizes="144x144" href="./assets/favicon/apple-icon-144x144.png" />
+		<link rel="apple-touch-icon" sizes="152x152" href="./assets/favicon/apple-icon-152x152.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-icon-180x180.png" />
+		<link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon/android-icon-192x192.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="96x96" href="./assets/favicon/favicon-96x96.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta name="msapplication-TileImage" content="./assets/favicon/ms-icon-144x144.png" />
+		<meta name="theme-color" content="#ffffff" />
+		<!--/// FAVICON ///-->
 
-    <!--/// FAVICON ///-->
-    <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="./assets/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="./assets/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="./assets/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="./assets/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./assets/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="./assets/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="./assets/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <!--/// FAVICON ///-->
+		<!-- /// Meta tags para compartilhamento /// -->
+		<meta prefix="og: http://ogp.me/ns#" property="og:title" content="Gerador de Senhas" />
+		<meta
+			prefix="og: http://ogp.me/ns#"
+			property="og:description"
+			content="Este aplicativo tem como intuito a criação de senhas com a utilização de um padrão."
+		/>
+		<meta prefix="og: http://ogp.me/ns#" property="og:url" content="https://topsenha.com.br/" />
+		<meta prefix="og: http://ogp.me/ns#" property="og:image" content="https://topsenha.com.br/assets/favicon.png" />
 
-    <!-- /// Meta tags para compartilhamento /// -->
-    <meta prefix="og: http://ogp.me/ns#" property="og:title" content="Gerador de Senhas" />
-    <meta prefix="og: http://ogp.me/ns#" property="og:description"
-        content="Este aplicativo tem como intuito a criação de senhas com a utilização de um padrão." />
-    <meta prefix="og: http://ogp.me/ns#" property="og:url" content="https://topsenha.com.br/" />
-    <meta prefix="og: http://ogp.me/ns#" property="og:image" content="https://topsenha.com.br/assets/favicon.png" />
+		<!-- Meta tags essentials  -->
+		<title>Gerador de Senhas - TOPSENHA</title>
+		<meta name="description" content="Aplicativo para gerar senhas utilizando uma chave e um padrão." />
+		<meta
+			name="keywords"
+			content="gerador de senhas, senha, password, password generator, senha segura, safe password, padrão, TOPSENHA"
+		/>
+		<meta name="author" content="Leonardo Noro Pereira" />
+		<link rel="manifest" href="./manifest.json" />
 
-    <!-- Meta tags essentials  -->
-    <title>Gerador de Senhas - TOPSENHA</title>
-    <meta name="description" content="Aplicativo para gerar senhas utilizando uma chave e um padrão." />
-    <meta name="keywords"
-        content="gerador de senhas, senha, password, password generator, senha segura, safe password, padrão, TOPSENHA">
-    <meta name="author" content="Leonardo Noro Pereira">
-    <link rel="manifest" href="./manifest.json">
+		<!-- JavaScript -->
+		<script src="./js/main.js"></script>
+		<script src="./js/clipboard.min.js"></script>
 
-    <!-- JavaScript -->
-    <script src="./js/main.js"></script>
-    <script src="./js/clipboard.min.js"></script>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="./css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="./css/style.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+	</head>
 
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="./css/reset.css">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-</head>
+	<body>
+		<article id="root">
+			<header>
+				<ul>
+					<li>
+						<i class="bi bi-circle-half" onclick="changeTheme()"></i>
+						<span onclick="changeTheme()">Alterar Tema</span>
+					</li>
 
-<body>
-    <article id="root">
-        <header>
-            <ul>
-                <li>
-                    <i class="bi bi-circle-half" onclick="changeTheme()"></i>
-                    <span onclick="changeTheme()">Alterar Tema</span>
-                </li>
-                
-                <li>
-                    <i class="bi bi-key-fill" onclick="setKey()"></i>
-                    <span onclick="setKey()">Armazenar Chave</span>
-                </li>
-            </ul>
-        </header>
+					<li>
+						<i class="bi bi-key-fill" onclick="setKey()"></i>
+						<span onclick="setKey()">Armazenar Chave</span>
+					</li>
+				</ul>
+			</header>
 
-        <section id="main">
-            <h1 class="titulo">Insira sua chave e padrão</h1>
-            <form id="form">
-                <label>
-                    <span>Chave:</span>
-                    <input type="password" name="chave" id="chave" oninput="cripto();" maxlength="10" />
-                </label>
+			<section id="main">
+				<h1 class="titulo">Insira sua chave e padrão</h1>
+				<form id="form">
+					<label>
+						<span>Chave:</span>
+						<input type="password" name="chave" id="chave" oninput="cripto();" maxlength="10" />
+					</label>
 
-                <label>
-                    <span>Padrão:</span>
-                    <input type="text" name="texto" id="texto" oninput="cripto()" />
-                </label>
+					<label>
+						<span>Padrão:</span>
+						<input type="text" name="texto" id="texto" oninput="cripto()" />
+					</label>
 
-                <label id="showPass">
-                    <input type="checkbox" onclick="showPassword(this.checked)">
-                    <span>Mostrar Chave</span>
-                </label>
+					<label id="showPass">
+						<input type="checkbox" onclick="showPassword(this.checked)" />
+						<span>Mostrar Chave</span>
+					</label>
 
-                <div id="divOutput" class="btnCopy" data-clipboard-target="#output">
-                    <input id="output" readonly value="" />
-                    <img src="assets/copy.svg" id="copy" />
-                </div>
-            </form>
-            <h2 id="qtde">0 caracteres</h2>
+					<div id="divOutput" class="btnCopy" data-clipboard-target="#output">
+						<input id="output" readonly value="" />
+						<img src="assets/copy.svg" id="copy" />
+					</div>
+				</form>
+				<h2 id="qtde">0 caracteres</h2>
+			</section>
 
-        </section>
+			<footer>
+				<a href="https://br.linkedin.com/in/leonardo-noro-pereira">
+					<i class="bi bi-linkedin"></i>
+					Leonardo Noro Pereira
+				</a>
 
-        <footer>
-            <a href="https://br.linkedin.com/in/leonardo-noro-pereira">
-                <i class="bi bi-linkedin"></i>
-                Leonardo Noro Pereira
-            </a>
+				<div>Desenvolvido por <b>Leonardo Noro Pereira</b></div>
 
-            <div>Desenvolvido por <b>Leonardo Noro Pereira</b></div>
+				<a href="https://github.com/TheSamhain">
+					<i class="bi bi-github"></i>
+					TheSamhain
+				</a>
+			</footer>
+		</article>
 
-            <a href="https://github.com/TheSamhain">
-                <i class="bi bi-github"></i>
-                TheSamhain
-            </a>
+		<script>
+			initial();
 
-        </footer>
-    </article>
-
-    <script>
-        initial();
-    </script>
-</body>
-
+			if ('serviceworker' in navigator) {
+				navigator.serviceWorker.register('/sw.js');
+			}
+		</script>
+	</body>
 </html>
