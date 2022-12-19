@@ -107,7 +107,7 @@ const setTheme = (theme = "dark") => {
     
     style.setProperty("--CorPrincipal", colorDefault);
     
-    const themeMetaTag = document.head.querySelector('name="theme-color"');
+    const themeMetaTag = document.head.querySelector('meta[name="theme-color"]');
         
     if(themeMetaTag) {
         themeMetaTag.content = colorDefault;
