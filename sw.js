@@ -1,4 +1,4 @@
-const PRECACHE = 'cache-v5';
+const PRECACHE = 'cache-v6';
 const RUNTIME = 'runtime';
 
 const PRECACHE_URLS = [
@@ -39,30 +39,22 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-	if (event.request.mode === 'navigate') {
+	if (event.request.url.startsWith(self.location.origin)) {
 		event.respondWith(
-			(async () => {
-				try {
-					const preloadResp = await event.preloadResponse;
-
-					if (preloadResp) {
-						return preloadResp;
-					}
-
-					const networkResp = await fetch(event.request);
-					return networkResp;
-				} catch (error) {
-					const cache = await caches.open(PRECACHE);
-					const cachedResp = await cache.match(offlineFallbackPage);
-					return cachedResp;
+			caches.match(event.request).then((cachedResponse) => {
+				if (cachedResponse) {
+					return cachedResponse;
 				}
-			})()
-		);
-	}
-});
 
-self.addEventListener('message', (event) => {
-	if (event.data && event.data.type === 'SKIP_WAITING') {
-		self.skipWaiting();
+				return caches.open(RUNTIME).then((cache) => {
+					return fetch(event.request).then((response) => {
+						// Put a copy of the response in the runtime cache.
+						return cache.put(event.request, response.clone()).then(() => {
+							return response;
+						});
+					});
+				});
+			})
+		);
 	}
 });
