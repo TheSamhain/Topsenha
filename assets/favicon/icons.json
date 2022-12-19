@@ -1,13 +1,4 @@
 {
-  "name": "Gerador de Senhas - TOPSENHA",
-  "short_name": "TOPSENHA",
-  "description": "Aplicativo para gerar senhas utilizando uma chave e um padrão.",
-  "lang": "pt-BR",
-  "start_url": "https://topsenha.com.br/",
-  "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#fff",
-  "theme_color": "#fff",
   "icons": [
     {
       "src": "assets/favicon/windows11/SmallTile.scale-100.png",
@@ -457,15 +448,5 @@
       "src": "assets/favicon/ios/1024.png",
       "sizes": "1024x1024"
     }
-  ],
-  "dir": "ltr",
-  "display_override": [
-    "fullscreen",
-    "standalone",
-    "minimal-ui"
-  ],
-  "scope": "https://topsenha.com.br/",
-  "categories": [
-    "security"
   ]
 }
