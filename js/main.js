@@ -93,16 +93,25 @@ const setKey = () => {
 const setTheme = (theme = "dark") => {
     const style = document.documentElement.style,
         linkedinDiv = document.getElementsByClassName("LI-profile-badge")[0];
-
+   
+    let colorDefault = "#fff";
+    
     if (theme == "dark") {
-        style.setProperty("--CorPrincipal", "#2f2f2f");
-        style.setProperty("--CorTexto", "#fff");
+        colorDefault = "2f2f2f";        
+        style.setProperty("--CorTexto", "#fff");                           
         localStorage.setItem("theme", "dark");
-    } else {
-        style.setProperty("--CorPrincipal", "#fff");
+    } else {        
         style.setProperty("--CorTexto", "#000");
         localStorage.setItem("theme", "light");
     }
+    
+    style.setProperty("--CorPrincipal", colorDefault);
+    
+    const themeMetaTag = document.head.querySelector('name="theme-color"');
+        
+    if(themeMetaTag) {
+        themeMetaTag.content = colorDefault;
+    }    
 };
 
 const initial = () => {
