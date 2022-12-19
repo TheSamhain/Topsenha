@@ -1,4 +1,4 @@
-const PRECACHE = 'cache-v4';
+const PRECACHE = 'cache-v5';
 const RUNTIME = 'runtime';
 
 const PRECACHE_URLS = [
@@ -52,7 +52,7 @@ self.addEventListener('fetch', (event) => {
 					const networkResp = await fetch(event.request);
 					return networkResp;
 				} catch (error) {
-					const cache = await caches.open(CACHE);
+					const cache = await caches.open(PRECACHE);
 					const cachedResp = await cache.match(offlineFallbackPage);
 					return cachedResp;
 				}
