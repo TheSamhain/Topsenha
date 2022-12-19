@@ -1,7 +1,14 @@
 const PRECACHE = 'cache-v1';
 const RUNTIME = 'runtime';
 
-const PRECACHE_URLS = ['index.html', 'js/main.js', 'js/clipboard.min.js', 'css/reset.css', 'css/style.css'];
+const PRECACHE_URLS = [
+	'index.html',
+	'js/main.js',
+	'js/clipboard.min.js',
+	'css/reset.css',
+	'css/style.css',
+	'assets/copy.svg',
+];
 
 self.addEventListener('install', (event) => {
 	event.waitUntil(
