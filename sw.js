@@ -66,7 +66,3 @@ self.addEventListener('message', (event) => {
 		self.skipWaiting();
 	}
 });
-
-if (workbox.navigationPreload.isSupported()) {
-	workbox.navigationPreload.enable();
-}
