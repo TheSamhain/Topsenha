@@ -1,142 +1,146 @@
+:root {
+  --CorPrincipal: #fff;
+  --CorTexto: #000;
+  --CorInput: #fff;
+  --CorInputDisabled: #d9dadc;
+}
+
 body {
-    height: 100vh;
-    width: 100vw;
-    background-color: var(--CorPrincipal);
-    color: var(--CorTexto);
-    font-size: larger;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--CorPrincipal);
+  color: var(--CorTexto);
+  font-size: larger;
 }
 
 #root {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    display: flex;
-    overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+  overflow: hidden;
 }
 
 #main {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex: 1;
-}
-
-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-top: 1px solid var(--CorTexto);
-    padding: 15px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex: 1;
+  gap: 16px;
 }
 
 #form {
-    margin: 25px;
-    display: flex;
-    flex-direction: column;
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 label {
-    margin: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+label > span {
+  font-size: medium;
 }
 
 label > input {
-    margin-left: 5px;
-    border: 1px solid #8f8f9d;
-    color: #000;
-    background-color: #FFFFFF;
-    border-radius: 3px;
-}
-
-input:disabled {
-    border: 1px solid #d9dadc;
-
+  color: #000;
+  border: 1px solid #8f8f9d;
+  background-color: var(--CorInput);
+  border-radius: 99px;
+  padding: 8px;
+  padding-left: 12px;
+  width: 100%;
 }
 
 #showPass {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+#showPass > input {
+  height: 20px;
+  width: 20px;
+  accent-color: #34a853;
 }
 
 #divOutput {
-    height: 25px;
-    background-color: #d9dadc;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border: 1px solid #d9dadc;
-    border-radius: 5px;
-    padding: 2px;
-    cursor: copy;
+  height: 25px;
+  background-color: var(--CorInputDisabled);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid var(--CorInputDisabled);
+  border-radius: 5px;
+  padding: 2px;
+  cursor: copy;
 }
 
 #output {
-    font-size: 14px;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    border-right: 1px solid black;
-    color: #000;
-    background-color: #ffffff00;
-    cursor: copy;
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  border-right: 1px solid black;
+  color: black;
+  cursor: copy;
 }
 
 #copy {
-    width: 100%;
-    margin: 3px;
+  width: 100%;
+  margin: 3px;
 }
 
 .titulo {
-    text-align: center;
-    font-size: inherit;
-    font-weight: initial;
-    font-size: 2em;
-    font-weight: bold;
+  text-align: center;
+  font-size: inherit;
+  font-weight: initial;
+  font-size: 2em;
+  font-weight: bold;
 }
 
-/* Lista de botões no cabeçalho*/
+/* HEADER */
 header > ul {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border-bottom: var(--CorTexto) 1px solid;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: var(--CorTexto) 1px solid;
 }
 
 header > ul > li {
-    border-right: 1px solid var(--CorTexto);
-    padding: 10px;
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
 }
 
 header > ul > li:first-child {
-    border-left: 1px solid var(--CorTexto);
+  border-right: 1px solid var(--CorTexto);
 }
 
 header > ul > li > * {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 header > ul > li > i {
-    font-size: x-large;
+  font-size: x-large;
 }
+/* --- HEADER --- */
 
-@media (max-width: 768px) {
-    footer {
-        flex-direction: column;
-    }
-
-    footer > * {
-        margin: 5px 0px;
-        order: 3;
-    }
-
-    footer > div {
-        order: 1;
-    }
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-top: 1px solid var(--CorTexto);
+  padding: 15px;
 }
